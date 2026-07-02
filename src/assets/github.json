@@ -1,0 +1,20 @@
+[
+  {
+    "id": 1,
+    "image": "/projects/ai-battle.png",
+    "title": "AI Battle Arena",
+    "description": "Multi-agent AI comparison platform built with React, Node.js, Express, and LangGraph.",
+    "tags": ["React", "Node.js", "LangGraph"],
+    "repoLink": "https://github.com/supriya759694/langgraph-battle-ai-arena",
+    "demoLink": "https://backend-cohort-nine.vercel.app/"
+  },
+  {
+    "id": 2,
+    "image": "/projects/perplexity.png",
+    "title": "Perplexity AI Clone",
+    "description": "AI-powered search assistant inspired by Perplexity.",
+    "tags": ["React", "Express", "OpenAI"],
+    "repoLink": "https://github.com/your-repository",
+    "demoLink": ""
+  }
+]
