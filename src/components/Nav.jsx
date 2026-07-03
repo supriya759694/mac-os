@@ -7,7 +7,7 @@ const Nav = () => {
     <nav>
         <div className="left">
             <FaApple className='icon'/>
-            <p>Name</p>
+            <p>Supriya Bhowmick</p>
             <p>File</p>
             <p>Window</p>
             <p>Terminal</p>
