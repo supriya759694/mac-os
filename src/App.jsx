@@ -21,6 +21,7 @@ const[windowState, setWindowState] = useState({
 
   return (
     <main>
+      <h1>mac os project</h1>
       <Nav />
       <Dock windowState={windowState} setWindowState={setWindowState}/>
 

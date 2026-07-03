@@ -3,9 +3,12 @@ import "./dock.scss";
 import {
   FaGithub,
   FaStickyNote,
-  FaFileAlt,
+  FaFilePdf,
   FaSpotify,
   FaTerminal,
+  FaCalendarAlt,
+  FaLink,
+  FaEnvelope,
 } from "react-icons/fa";
 
 const Dock = ({setWindowState})=>{
@@ -23,13 +26,37 @@ const Dock = ({setWindowState})=>{
             >
                 <FaStickyNote className="dock-icon" />
             </div>
-
             <div
+            className = 'icon pdf'
+            onClick = {()=> setWindowState(s=>({...s, pdf: !s.pdf}))}
+            >
+                <FaFilePdf className="dock-icon" />
+            </div>
+            <div
+            className = 'icon calendar'
+            onClick = {()=> setWindowState(s=>({...s, calendar: !s.calendar}))}
+            >
+                <FaCalendarAlt className="dock-icon" />
+            </div>
+            <div
+            className = 'icon link'
+            onClick = {()=> setWindowState(s=>({...s, link: !s.link}))}
+            >
+                <FaLink className="dock-icon" />
+            </div>
+            <div
+            className = 'icon mail'
+            onClick = {()=> setWindowState(s=>({...s, mail: !s.mail}))}
+            >
+                <FaEnvelope className="dock-icon" />
+            </div>
+
+            {/* <div
             className = 'icon resume'
             onClick = {()=> setWindowState(s=>({...s, resume: !s.resume}))}
             >
-                <FaFileAlt className="dock-icon" />
-            </div>
+                <FaFilePdf className="dock-icon" />
+            </div> */}
 
             <div
             className = 'icon spotify'
