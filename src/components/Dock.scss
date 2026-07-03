@@ -1,32 +1,105 @@
 .dock {
-  position: fixed;
-  bottom: 20px;
+  display: flex;
+  gap: 0.75rem;
+
+  position: absolute;
+  bottom: 1rem;
   left: 50%;
   transform: translateX(-50%);
-  display: flex;
-  gap: 16px;
-  padding: 10px 20px;
-  border-radius: 16px;
-  background: rgba(255, 255, 255, 0.15);
-  backdrop-filter: blur(10px);
-}
 
-.icon {
-  cursor: pointer;
-  transition: transform 0.2s ease;
-}
+  background-color: rgba(63, 63, 63, 0.395);
+  padding: 0.75rem 1rem;
+  border-radius: 0.75rem;
 
-.github {
-  font-size: 36px;
-  background-color: black;
-  border-radius: 50%;
-}
+  backdrop-filter: blur(5px);
+  -webkit-backdrop-filter: blur(5px);
 
-.icon:hover {
-  transform: scale(1.2);
-}
+  .icon {
+    width: 3.75rem;
+    aspect-ratio: 1 / 1;
 
-.dock-icon {
-  font-size: 36px;
-  color: white;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    padding: 0.65rem;
+    border-radius: 0.5rem;
+
+    cursor: pointer;
+    transition: all 0.3s ease;
+  }
+
+  .dock-icon {
+    font-size: 2rem;
+    color: white;
+  }
+
+  /* GitHub & Terminal */
+  .github,
+  .terminal {
+    background-color: #181717;
+  }
+
+  /* Notes */
+  .note {
+    background: linear-gradient(
+      to bottom,
+      rgb(255, 179, 87),
+      rgb(255, 153, 28)
+    );
+  }
+
+  /* PDF */
+  .pdf {
+    background: linear-gradient(
+      to bottom,
+      rgb(255, 65, 78),
+      rgb(255, 25, 40)
+    );
+  }
+
+  /* Calendar */
+  .icon.calendar {
+    background: linear-gradient(
+      to bottom,
+      rgb(105, 94, 255),
+      rgb(66, 52, 255)
+    );
+  }
+
+  /* Mail */
+  .icon.mail {
+    background: linear-gradient(
+      to bottom,
+      rgb(66, 133, 244),
+      rgb(26, 115, 232)
+    );
+  }
+
+  /* Link */
+  .link {
+    background: linear-gradient(
+      to bottom,
+      rgb(163, 97, 170),
+      rgb(142, 33, 154)
+    );
+  }
+
+  /* Spotify */
+  .spotify {
+    background: linear-gradient(
+      to bottom,
+      rgb(78, 176, 33),
+      rgb(53, 142, 12)
+    );
+  }
+
+  .icon:hover {
+    transform: scale(1.2) translateY(-10px);
+  }
+
+  .icon:hover+.icon,
+    .icon:has(+ .icon:hover) {
+        transform: scale(1.1) translateY(-10%);
+    }
 }
