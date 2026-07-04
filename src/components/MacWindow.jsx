@@ -3,9 +3,7 @@ import "./window.scss"
 
 const MacWindow = ({ children, width = "40vw", height = "40vh", windowName, setWindowsState }) => {
   return (
-    <>
-    
-    <Rnd default={{ width, height, x: 300, y: 200 }}>
+    <Rnd default={{ width:width, height:height, x: 300, y: 200 }}>
       <div className="window">
         <div className="nav">
           <div className="dots">
@@ -22,7 +20,7 @@ const MacWindow = ({ children, width = "40vw", height = "40vh", windowName, setW
         </div>
       </div>
     </Rnd>
-    </>
+    
   )
 }
 

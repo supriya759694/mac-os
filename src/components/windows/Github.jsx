@@ -1,22 +1,60 @@
 import MacWindow from '../MacWindow'
 import githubData from '../../assets/github.json'
+import "./github.scss";
 
-const Github = ({ windowName, setWindowsState }) => (
-  <MacWindow windowName={windowName} setWindowsState={setWindowsState}>
-    <div className="cards">
-      {githubData.map((project, i) => (
-        <div key={i} className="card">
-          <img src={project.image} alt={project.title} />
-          <h1>{project.title}</h1>
-          <p>{project.description}</p>
-          <div className="tags">
-            {project.tags.map(tag => <span key={tag} className="tag">{tag}</span>)}
-          </div>
-          <a href={project.repoLink}>Repository</a>
-        </div>
-      ))}
+const GitCard = ({ data }) => {
+  return (
+    <div className="card">
+      <img src={data.image} alt={data.title} />
+
+      <h1>{data.title}</h1>
+
+      <p className="description">{data.description}</p>
+
+      <div className="tags">
+        {data.tags.map((tag) => (
+          <p key={tag} className="tag">
+            {tag}
+          </p>
+        ))}
+      </div>
+
+      <div className="urls">
+        <a
+          href={data.repoLink}
+          target="_blank"
+          rel="noopener noreferrer"
+        >
+          Repository
+        </a>
+
+        {data.demoLink && (
+          <a
+            href={data.demoLink}
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            Demo
+          </a>
+        )}
+      </div>
     </div>
-  </MacWindow>
-)
+  );
+};
 
-export default Github
+const Github = ({ windowName, setWindowsState }) => {
+  return (
+    <MacWindow
+      windowName={windowName}
+      setWindowsState={setWindowsState}
+    >
+      <div className="cards">
+        {githubData.map((project) => (
+          <GitCard key={project.id} data={project} />
+        ))}
+      </div>
+    </MacWindow>
+  );
+};
+
+export default Github;
