@@ -1,17 +1,22 @@
 import MacWindow from "../MacWindow";
+import "./spotify.scss";
 
-const Spotify = ({ windowName, setWindowState }) => {
+const Spotify = ({ windowName, setWindowsState }) => {
   return (
     <MacWindow
+      width="25vw"
       windowName={windowName}
-      setWindowState={setWindowState}
+      setWindowsState={setWindowsState}
     >
-      <iframe
-        src="YOUR_SPOTIFY_EMBED_LINK"
-        width="100%"
-        height="100%"
-        allow="autoplay; clipboard-write; encrypted-media;"
-      />
+      <div className="spotify-window">
+        <iframe
+          title="Spotify Playlist"
+          src="https://open.spotify.com/embed/playlist/37i9dQZF1DX14CbVHtvHRB?utm_source=generator&theme=0"
+          loading="lazy"
+          allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture"
+          allowFullScreen
+        />
+      </div>
     </MacWindow>
   );
 };
